@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Indoor Tileset.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 29.1489, 50, 29.3427, 50, 50, 0, 50 )
+
+[sub_resource type="TileSet" id=8]
+0/name = "Indoor Tileset"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 250, 200 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 50, 50 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 9 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Map" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 8 )
+cell_size = Vector2( 50, 50 )
+cell_custom_transform = Transform2D( 50, 0, 0, 50, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 262149, 0, 65536, 262150, 0, 3, 327680, 0, 0, 327681, 2, 0, 327682, 4, 0, 327685, 0, 131072, 327686, 0, 65539, 327687, 0, 2, 327688, 0, 2, 327689, 0, 2, 327690, 0, 2, 327691, 0, 2, 327692, 0, 3, 393221, 0, 131072, 393222, 0, 65538, 393223, 0, 65538, 393224, 0, 65538, 393225, 0, 65538, 393226, 0, 65538, 393227, 0, 65538, 393228, 0, 65539, 393229, 0, 65540, 458757, 0, 196608, 458758, 0, 131074, 458759, 0, 131074, 458760, 0, 131074, 458761, 0, 131074, 458762, 0, 131075, 458763, 0, 65538, 458764, 0, 65538, 458765, 0, 131076, 524298, 0, 196611, 524299, 0, 131074, 524300, 0, 131074, 524301, 0, 196612, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 720909, 0, 0, 720910, 0, 0, 786444, 0, 0, 786445, 0, 0, 786446, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 483, 250 )
